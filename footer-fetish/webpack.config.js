@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const REMOVE_STYLES_JS = 'RemoveStylesJSPlugin'
-outputPath = path.resolve(__dirname, 'dist');
+outputPath = path.resolve(__dirname, 'public');
 
 module.exports = {
   target: 'web',
@@ -27,7 +27,6 @@ module.exports = {
       },
     ],
   },
-  watch: true,
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
