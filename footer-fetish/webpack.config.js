@@ -3,6 +3,8 @@ const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const moveProps = require('postcss-move-props-to-bg-image-query');
+const customProps = require('postcss-custom-properties');
 
 const REMOVE_STYLES_JS = 'RemoveStylesJSPlugin'
 outputPath = path.resolve(__dirname, 'public');
@@ -28,7 +30,9 @@ module.exports = {
             options: {
               postcssOptions: {
                 plugins: [
-                  'postcss-move-props-to-bg-image-query',
+                  moveProps({
+                    computeCustomProps: customProps({ preserve: false })
+                  })
                 ]
               }
             }

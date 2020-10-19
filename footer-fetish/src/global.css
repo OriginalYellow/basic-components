@@ -1,4 +1,4 @@
-@import 'reset-css';
+@import '~reset-css';
 
 /* global css: */
 :root {
@@ -69,7 +69,7 @@ p {
 
 .icon.map-marker {
   background-image: url('./assets/map-marker.svg');
-  -svg-mixer-fill: blue;
+  -svg-mixer-fill: var(--primaryColor);
 }
 
 /* .container-top > div {
