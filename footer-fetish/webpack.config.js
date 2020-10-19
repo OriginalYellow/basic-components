@@ -23,7 +23,24 @@ module.exports = {
         use: [
           { loader: MiniCssExtractPlugin.loader },
           'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [
+                  'postcss-move-props-to-bg-image-query',
+                ]
+              }
+            }
+          }
         ]
+      },
+      {
+        test: /\.svg(\?.*)?$/,
+        use: [
+          'file-loader',
+          'svg-transform-loader',
+        ],
       },
     ],
   },
@@ -39,7 +56,7 @@ module.exports = {
       apply: (compiler) => {
         compiler.hooks.afterEmit.tap(REMOVE_STYLES_JS, compilation => {
           try {
-            fs.unlinkSync(path.join('./dist', 'global.bundle.js'))
+            fs.unlinkSync(path.join('./public', 'global.bundle.js'))
           } catch (e) {
             compilation.getLogger(REMOVE_STYLES_JS).warn(`${REMOVE_STYLES_JS} failed`)
           }

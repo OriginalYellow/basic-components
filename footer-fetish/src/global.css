@@ -1,3 +1,78 @@
-p {
-  color: rgb(255, 39, 39);
+@import 'reset-css';
+
+/* global css: */
+:root {
+	--primaryColor: #0145FF;
+	--debugColor: #a9bbee;
+	--textColor: black;
+  --textDarkColor: white;
+  --logoSize: 43px;
+  --iconSize: 43px;
 }
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--textColor);
+}
+
+p {
+  line-height: 1.38rem;
+}
+
+.container {
+  padding: 75px 85px 30px 85px;
+}
+
+.container > .top {
+  height: 50px;
+  width: auto;
+  display: grid;
+  grid-template-columns: 300px 1fr 200px;
+  grid-template-areas:
+  "blurb sitemap contact"
+}
+
+.logo {
+  border-radius: 100%;
+  min-width: var(--logoSize);
+  max-width: var(--logoSize);
+  min-height: var(--logoSize);
+  background-color: var(--primaryColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--textDarkColor);
+  font-weight: bold;
+}
+
+.blurb > p {
+  margin-top: 28px;
+}
+
+.sitemap {
+  margin: 0px 0px 0px 92px;
+  display: grid;
+  font-weight: bold;
+  font-size: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 150px));
+  grid-row-gap: 30px;
+  grid-column-gap: 20px;
+}
+
+.icon {
+  min-width: var(--iconSize);
+  max-width: var(--iconSize);
+  min-height: var(--iconSize);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon.map-marker {
+  background-image: url('./assets/map-marker.svg');
+  -svg-mixer-fill: blue;
+}
+
+/* .container-top > div {
+  background-color: var(--debugColor);
+} */
+;

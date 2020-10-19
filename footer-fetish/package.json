@@ -10,10 +10,18 @@
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^5.0.0",
+    "file-loader": "^6.1.1",
     "html-webpack-plugin": "^4.5.0",
     "mini-css-extract-plugin": "^1.0.0",
+    "postcss": "^8.1.2",
+    "postcss-loader": "^4.0.4",
+    "postcss-move-props-to-bg-image-query": "^4.0.0",
+    "svg-transform-loader": "^2.0.13",
     "webpack": "4.44.2",
     "webpack-cli": "3.3.12",
     "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "reset-css": "^5.0.1"
   }
 }
